@@ -1,11 +1,6 @@
-%h1 This is the article#index placeholder
-
 - @articles.each do |article|
   %h2= link_to article.title, article
   %p
     Published on
     = article.created_at.strftime("%B %d, %Y")
   %p= truncate(article.content, length: 20)
-
-- if user_signed_in?
-  = link_to 'New article', new_article_path
